@@ -1,0 +1,14 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<link rel="stylesheet" href={% static 'css/styles.css' %}>
+
+ {% block content %}
+<div class="predicted">
+    <h1>ALL THE BEST!!</h1>
+    <p>Predicted job category is: <span>{{ category }}</span></p>
+</div>
+
+
+{% endblock content %}

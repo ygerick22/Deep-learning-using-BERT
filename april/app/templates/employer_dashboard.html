@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<link rel="stylesheet" href={% static 'css/styles.css' %}>
+{% block content %}
+
+   
+    <form>
+        <div class="dash-board"> 
+        <h1> WELCOME TO EMPLOYER'S DASHBOARD </h1> 
+        <a href="{% url 'RequirementUser' %}" class="btn btn-info">Post job openings</a> <br>
+        <a href="{%url 'job-applicant'%}" class="btn btn-info">View Job Applicants</a>
+        </div> 
+    </form>   
+
+ {% endblock content %}

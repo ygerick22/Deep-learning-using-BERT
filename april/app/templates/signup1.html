@@ -1,0 +1,42 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<link rel="stylesheet" href={% static 'css/styles.css' %}>
+
+{% block content %}
+<div class="reg-form">
+    
+    <form class="reg form-inline" method="post">
+
+        <h1> KINDLY SET UP YOUR DETAILS </h1> 
+        {% csrf_token %}
+        
+        <div class="form-group">
+
+            {{user.username.label_tag}}
+            {{user.username}}
+
+            {{user.password1.label_tag}}
+            {{user.password1}}
+
+            {{user.password2.label_tag}}
+            {{user.password2}}
+
+            {{user.status.label_tag}}
+            {{user.status}}
+
+        <button class="btn btn-success" type="next">Register</button>
+
+        {{ user.errors }}
+      </div>
+      
+    </form> 
+    <div class="ha-ac">
+        Have an Account?<a href="{% url 'login' %}">Login</a>
+    </div>
+    
+</div> 
+     
+ 
+{% endblock content %}

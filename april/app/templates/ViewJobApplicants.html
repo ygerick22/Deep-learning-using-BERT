@@ -1,0 +1,72 @@
+<!-- <!DOCTYPE html> 
+<html> 
+<head>
+<title> skills input </title>
+<style> 
+Body {
+  font-family: Calibri;
+  background-color: grey;
+}
+button { 
+       background-color: #0b1452; 
+       width: 100%;
+        color: orange; 
+        padding: 10px; 
+        margin: 9px 0px; 
+        border: none; 
+        cursor: pointer; 
+         } 
+
+
+ input[type=text], input[type=password] { 
+        width: 100%; 
+        margin: 8px 0;
+        padding: 12px 20px; 
+        display: inline-block; 
+        border: 2px solid blue; 
+        box-sizing: border-box; 
+    }
+ button:hover { 
+        opacity: 0.7; 
+    } 
+  .btn { 
+        width: auto; 
+        padding: 1px 4px;
+        margin: 5px 4px;
+    } 
+      
+   
+ .container { 
+        padding: 25px; 
+        background-color: grey;
+    } 
+</style> 
+</head>   -->
+
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<link rel="stylesheet" href={% static 'styles.css' %}>
+
+ {% block content %}
+ <div class="reg-form">
+  
+
+    <center> <h1> KINDLY INCLUDE YOUR OTHER SKILLS</h1> </center> 
+
+    <form method="post" ,action ="UploadSkills">
+      <textarea name="fieldname" style="width:1500px;height:500px;"></textarea>
+
+      {% csrf_token %}
+      {% load crispy_forms_tags %}
+
+   
+       <button class="btn btn-success" type="submit">Submit</button>
+         
+   </form> 
+   </div>
+  
+  {% endblock content %}
+
+

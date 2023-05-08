@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<link rel="stylesheet" href={% static 'css/styles.css' %}>
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="alert alert-success" role="alert">
+      You have been logged out successfully!
+    </div>
+    <a href="{% url 'login' %}" class="btn btn-info log-out">Log in </a>
+</div>
+
+
+{% endblock content %}

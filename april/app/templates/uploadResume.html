@@ -1,0 +1,32 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<link rel="stylesheet" href={% static 'styles.css' %}>
+  {% block content %}
+  <div class="DetailsForm"></div>
+
+  <!-- req-form  -->
+
+<div class="req-form ">
+  <h1> JOB SEEKER REQUIREMENTS UPLOAD </h1>
+  <form class="form-inline" method="post" ,action ="Details">
+    {% csrf_token %}
+    <div class="form-group"> <!-- req-btn -->
+      {{form}}
+      <button class="btn btn-success" type="submit">Submit Details</button> 
+    </div>
+  </form>
+</div>
+
+    {% endblock content %}
+  
+    
+      <!-- <form action="submit-resume.php" method="post" class="reg-form" enctype="multipart/form-data">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="resume">Resume:</label>
+        <input type="file" id="resume" name="resume"><br>
+        <input type="submit" value="Submit"> -->

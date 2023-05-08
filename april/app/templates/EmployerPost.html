@@ -1,0 +1,38 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<link rel="stylesheet" href={% static 'css/styles.css' %}>
+
+{% block content %}
+<div class="require employer-input">
+      <form method="post" class="form-inline">
+        <h1>INPUT JOB REQUIREMENTS</h1> 
+          {% csrf_token %}
+          <div class="form-group">
+    
+              {{ form.job_name.label_tag }}
+              {{ form.job_name }}
+          
+              {{ form.years_of_experience.label_tag }}
+              {{ form.years_of_experience }}
+       
+              {{ form.skills.label_tag }}
+              {{ form.skills }}
+              <button class="btn btn-success" type="submit">Submit Requirements</button> 
+          </div>
+           
+           <!-- <a href="{% url 'RequirementUser' %}">Back</a> -->
+      
+      </form>
+  </div>
+{% endblock content %}
+
+
+
+
+<!-- <form method="POST" action="{% url 'nlp' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Submit</button>
+</form> -->

@@ -1,0 +1,18 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<link rel="stylesheet" href={% static 'css/styles.css' %}>
+
+ {% block conntent %}
+ <link rel="stylesheet" href={% static 'css/styles.css' %}>
+ <center> <h1> WELCOME TO THE JOB APPLICATION WEBSITE </h1> </center>  <!-- from this point the input variables must relate with my models-->
+ <form action="{% details %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="finish registration">
+
+</form> 
+
+{% endblock conntent %}
+  

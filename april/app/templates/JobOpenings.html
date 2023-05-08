@@ -1,0 +1,25 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<link rel="stylesheet" href={% static 'css/styles.css' %}>
+
+{% block content %}
+
+  <div class="job-open">
+    <h1> JOB OPENINGS </h1> 
+
+    
+    {% for detail in details %}
+    <div class="each">
+      <span>Job Name:</span> <p>{{ detail.job_name }}</p>
+      <span>Years Of Experience: </span>  <p>{{ detail.years_of_experience }}</p> 
+       <span>Skills: </span>  <p>{{ detail.skills }}</p>
+    </div>
+
+    {% endfor %}
+  </div>
+
+
+
+{% endblock content %}

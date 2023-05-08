@@ -1,0 +1,27 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<link rel="stylesheet" href={% static 'css/styles.css' %}>
+
+{% block content %}
+
+  
+
+   <div class="details-container">
+    <h1> JOB APPLICANTS</h1> 
+      {% for detail in details %}
+      {{ forloop.counter }}
+          <div class="detail-item">
+              <h4> <span>First Name:</span>  <p>{{ detail.F_name }}</p></h4> 
+              <h4> <span>Second Name: </span> <p>{{ detail.S_name }}</p></h4> 
+              <h4> <span>Phone Number:</span>  <p>{{ detail.phone_number }}</p></h4> 
+              <h4> <span>Email address: </span> <p>{{ detail.email_address }}</p></h4> 
+              <h4> <span>Year of Experience: </span> <p>{{ detail.years_of_experience }}</p></h4> 
+              <h4><span>Acquired Skills:</span>  <p>{{ detail.acquired_skills }}</p></h4> 
+              <h4> <span>Other skills:</span>  <p>{{ detail.other_skills }}</p></h4>  
+              <hr>
+          </div>
+      {% endfor %}
+  </div>
+{% endblock content %}

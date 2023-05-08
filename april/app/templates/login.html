@@ -1,0 +1,32 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<link rel="stylesheet" href={% static 'css/styles.css' %}>
+
+{% block content %}
+ <div class="reg-form">
+  <form method="post", action =" ", class="log-form form-inline">
+    <h1>LOGIN</h1>
+    {% csrf_token %}
+    
+    <div class="form-group">
+
+    {{ form.username.label_tag }}
+    {{ form.username }}
+    {{ form.password.label_tag }}
+    {{ form.password }}
+
+     <button class="btn btn-success" type="submit">Login</button>
+    </div>  
+ </form> 
+ <div class="ha-ac">
+  Don't Have Account?<a href="{% url 'signup' %}">Create Account</a>
+</div>
+ </div>
+
+{% endblock content %}
+  
+
+
+ 
